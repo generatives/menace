@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://pixijs.download/release/pixi.js"></script>
+    <script src="/static/GameBoard.js"></script>
+    <script src="/static/TicTacToeApp.js"></script>
+
+    <title>M.E.N.A.C.E</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h1>M.E.N.A.C.E</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <canvas id="tictactoe-canvas" width="225" height="225" class="my-4"></canvas> 
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <select id="opponent-selector" class="form-select" onchange="opponentSelectorChanged()" aria-label="Opponent selector">
+                    <option value="0" selected>Perfect MinMax</option>
+                    <option value="1">Random</option>
+                    <option value="2">M.E.N.A.C.E Untrained</option>
+                    <option value="2">M.E.N.A.C.E 25%</option>
+                    <option value="3">M.E.N.A.C.E 50%</option>
+                    <option value="4">M.E.N.A.C.E 75%</option>
+                    <option value="5">M.E.N.A.C.E 95%</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-warning" onclick="restartGame()" type="button">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    let view = document.getElementById("tictactoe-canvas")
+    let app = new PIXI.Application({ width: 225, height: 225, backgroundColor: 0xFFFFFF, view: view });
+
+    var tictactoe = new TicTacToeApp(app.stage);
+
+    function restartGame() {
+        tictactoe.restartGame()
+    }
+
+    function opponentSelectorChanged() {
+        let opponentSelector = document.getElementById("opponent-selector")
+        let value = parseInt(opponentSelector.value)
+        tictactoe.setOpponent(value)
+        tictactoe.restartGame()
+    }
+
+    restartGame();
+  </script>
+</html>

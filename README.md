@@ -6,7 +6,7 @@ It also includes a simple Flask app which can be used to play Tic Tac Toe agains
 
 Original inspiration for this project came from this video from Matt Parker https://www.youtube.com/watch?v=R9c-_neaxeU
 
-I used a few other resources in my implementation including
+I used a few other resources I referenced for my implementation:
 - https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine
 - https://chalkdustmagazine.com/features/menace-machine-educable-noughts-crosses-engine/#more-3326
 - https://www.mscroggs.co.uk/menace/

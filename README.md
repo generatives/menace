@@ -2,7 +2,7 @@
 
 This is an Python implementation of the M.E.N.A.C.E algorithm, designed by Donald Mitchie in 1961.
 
-It also includes a simple Flask app which can be used to play Tic Tac Toe against a number of pre-trained M.E.N.A.C.E agents, a random agent, and a MinMax agent (which plays perfectly).
+It also includes a simple Flask app which can be used to play Tic Tac Toe against a number of pre-trained M.E.N.A.C.E agents, a random agent, and a MinMax agent (which plays perfectly). The Flask app is available here https://menace-tictactoe.herokuapp.com/
 
 Original inspiration for this project came from this video from Matt Parker https://www.youtube.com/watch?v=R9c-_neaxeU
 
